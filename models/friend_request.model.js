@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var requestSchema = new Schema({
-    sent_by : { type: Schema.Types.ObjectId },
-    sent_to : { type: Schema.Types.ObjectId },
+    sent_by : { type: Schema.Types.ObjectId ,required : true ,unique:true},
+    sent_to : { type: Schema.Types.ObjectId, required : true ,unique:true },
     request_status : {type : String, required: true, default: "Pending"},
     is_deleted : {type : String, default: false}
    
